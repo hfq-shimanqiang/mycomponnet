@@ -1,0 +1,15 @@
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.huifenqi.jedi.spring.JediApplicationRunListener
+
+# Application Context Initializers
+org.springframework.context.ApplicationContextInitializer=\
+com.huifenqi.jedi.spring.JediApplicationContextInitializer
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+com.huifenqi.jedi.spring.JediApplicationListener
+
+# Environment Post Processors
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.huifenqi.jedi.spring.JediEnvironmentPostProcessor

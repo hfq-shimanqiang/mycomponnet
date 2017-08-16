@@ -1,0 +1,65 @@
+server:
+  port: 12101
+  tomcat:
+    accesslog:
+      enabled: true
+    basedir: target/tomcat
+
+logging:
+  level:
+    com.huifenqi.jedi.channel: INFO
+
+spring:
+  application:
+    name: jedi-channel-service
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    encoding: UTF-8
+    mode: HTML5
+
+db:
+  #本模块数据库
+  master:
+    driverClassName: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://47.93.114.117:3306/db_charge_platform?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&useSSL=true"
+    username: dev
+    password: dev001
+    # 初始化大小，最小，最大
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+
+  #查询模块数据库
+  query:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://47.93.114.117:3306/db_charge_platform?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8&useSSL=true"
+    username: dev
+    password: dev001
+    # 初始化大小，最小，最大
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    timeBetweenEvictionRunsMillis: 60000
+    # 配置一个连接在池中最小生存的时间，单位是毫秒
+    minEvictableIdleTimeMillis: 300000
+
+zookeeper:
+  address: "10.31.152.38:15001,10.31.152.38:15002,10.31.152.38:15003"
+
+dubbo:
+  port: 12201
+  serialization: kryo2
+
